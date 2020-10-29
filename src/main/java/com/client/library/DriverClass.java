@@ -7,9 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverClass implements Driver {
 
-    private WebDriver driver;
+    WebDriver driver;
     static String driverName;
-    public static String resourcePath = System.getProperty("user.dir")+"/src/test/resources/";
+
     static {
         driverName = new PropertyReader().getProperty("browser");
         WebDriverManager.chromedriver().setup();

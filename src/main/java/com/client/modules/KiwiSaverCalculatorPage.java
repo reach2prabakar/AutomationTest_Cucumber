@@ -113,7 +113,7 @@ public class KiwiSaverCalculatorPage extends LandingHomePage {
         appHelpers.selectFromRadioList(radKiwiSaver,dataMap.get("kiwiSaver"));
         appHelpers.selectFromRadioList(radRiskProfile,dataMap.get("riskProfile"));
         appHelpers.clickOnElement(btnViewProjection);
-        assertThat("user is not able to view his projected retirement balance",lblProjectionValue.getText(),
+        assertThat("user is not able to view his projected retirement balance",lblProjectionValue.getText().replaceAll("\\n",""),
                 equalTo(dataMap.get("projection")));
         appHelpers.switchToDefault();
     }

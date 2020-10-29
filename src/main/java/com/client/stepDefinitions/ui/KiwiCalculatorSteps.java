@@ -28,14 +28,14 @@ public class KiwiCalculatorSteps extends WestpacTest {
     @When("^user navigated to the (.*) and (.*) and then to (.*) menu option$")
     public void navigateToMenuOption(String headerName,String uberMenuName,String subMenuName){
         appHelpers.clickOnElement(landingPage.selectHeaderMenu(headerName));
-        appHelpers.howerOnElement(landingPage.selectUberMenu(uberMenuName));
+        appHelpers.hoerOnElement(landingPage.selectUberMenu(uberMenuName));
         appHelpers.clickOnElement(landingPage.selectSubMenu(subMenuName));
     }
 
     @And("^she finds the information icon besides all the calculator field$")
     public void calculatorFieldIconValidation(){
         KiwiCalculatorPage kiwiCalculatorPage = new KiwiCalculatorPage(driver);
-        appHelpers.clickOnElement(kiwiCalculatorPage.btnkiwiCalculator);
+        appHelpers.clickOnElement(kiwiCalculatorPage.btnKiwiCalculator);
         KiwiSaverCalculatorPage kiwiSaverCalculatorPage = new KiwiSaverCalculatorPage(driver);
         appHelpers.switchToIframe(kiwiSaverCalculatorPage.frmCalFields);
         int position = appHelpers.isElementPresentOnList(kiwiSaverCalculatorPage.icnCalculatorField);
@@ -62,14 +62,14 @@ public class KiwiCalculatorSteps extends WestpacTest {
     }
 
     @Then("^user is able to calculate his kiwi saver projected balance at retirement$")
-    public void calculatorRetirementBalance(DataTable dataTable){
+    public void calculatorRetirementBalance(DataTable dataTable) throws InterruptedException {
         List<Map<String, String>> calcFieldListMap  = dataTable.asMaps();
         KiwiCalculatorPage kiwiCalculatorPage = new KiwiCalculatorPage(driver);
-        appHelpers.clickOnElement(kiwiCalculatorPage.btnkiwiCalculator);
+        appHelpers.clickOnElement(kiwiCalculatorPage.btnKiwiCalculator);
         KiwiSaverCalculatorPage kiwiSaverCalculatorPage = new KiwiSaverCalculatorPage(driver);
         for (Map<String, String> dataMap : calcFieldListMap) {
            switch (dataMap.get("employment")){
-               case "Employment":
+               case "Employed":
                    kiwiSaverCalculatorPage.employedRetirementCalc(dataMap);
                    break;
                case "Self-employed":
@@ -79,6 +79,7 @@ public class KiwiCalculatorSteps extends WestpacTest {
                default:
                    break;
            }
+           Thread.sleep(3000);
         }
     }
 }

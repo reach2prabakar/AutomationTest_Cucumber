@@ -16,7 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class AppHelpers {
 
     private static final Logger logger = LogManager.getLogger(AppHelpers.class);
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public AppHelpers(WebDriver driver){
         this.driver = driver;
@@ -41,19 +41,10 @@ public class AppHelpers {
         };
     }
 
-    public boolean waitForJSandJQueryToLoad() {
+    public void waitForJSandJQueryToLoad() {
         ExpectedCondition<Boolean> jsLoad = jsLoad();
         ExpectedCondition<Boolean> angularLoad = angularLoad();
-        return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.and(angularLoad, jsLoad));
-    }
-
-    public void waitForElement(WebElement webElement){
-        try {
-            WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
-            webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
-        }catch (ElementNotVisibleException e){
-            logger.error(webElement + "is not visible in the page. please see log for more details");
-        }
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.and(angularLoad, jsLoad));
     }
 
     public void clickOnElement(WebElement webElement){
@@ -61,7 +52,7 @@ public class AppHelpers {
         waitForJSandJQueryToLoad();
     }
 
-    public void howerOnElement(WebElement webElement){
+    public void hoerOnElement(WebElement webElement){
         Actions actions = new Actions(driver);
         actions.moveToElement(webElement).build().perform();
     }
@@ -129,14 +120,14 @@ public class AppHelpers {
     }
 
     public void selectFromDDText(WebElement element,String text){
-        boolean uitag = false;
+        boolean uiTag = false;
         try{
             Select select = new Select(element);
             select.selectByVisibleText(text);
         }catch (UnexpectedTagNameException e){
-            uitag = true;
+            uiTag = true;
         }
-        if(uitag){
+        if(uiTag){
             List<WebElement> dropdownList =  element.findElements(By.tagName("li"));
             dropdownList.stream()
                     .filter(items -> items.getText().toLowerCase().equals(text.toLowerCase())).findFirst().get().click();

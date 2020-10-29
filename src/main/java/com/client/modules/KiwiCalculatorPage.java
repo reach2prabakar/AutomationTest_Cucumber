@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class KiwiCalculatorPage extends LandingHomePage {
 
     @FindBy(xpath = "//section//a[@href='/kiwisaver/calculators/kiwisaver-calculator/']")
-    public WebElement btnkiwiCalculator;
+    public WebElement btnKiwiCalculator;
 
     public KiwiCalculatorPage(WebDriver driver){
         super(driver);
@@ -22,7 +22,7 @@ public class KiwiCalculatorPage extends LandingHomePage {
 
     public void waitForPage(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(btnkiwiCalculator));
+        wait.until(ExpectedConditions.visibilityOf(btnKiwiCalculator));
         assertThat("Kiwi Calculator page is not loaded",driver.getTitle(),
                 equalTo("KiwiSaver calculator - Westpac NZ")
         );

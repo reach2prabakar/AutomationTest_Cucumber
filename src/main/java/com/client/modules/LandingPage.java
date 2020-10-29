@@ -2,8 +2,6 @@ package com.client.modules;
 
 import com.client.library.PropertyReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,9 +9,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class  LandingPage extends LandingHomePage{
-
-    @FindBy(id="generalSearch")
-    public WebElement txtGeneralSearch;
 
     public LandingPage(WebDriver driver){super(driver);}
 
