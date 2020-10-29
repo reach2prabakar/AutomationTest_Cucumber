@@ -1,8 +1,8 @@
 @ui @kiwiCalculator
-Feature: Jira-Feature# Used Cars Details Search
-  As a sandbox test user
-  I will search for the used cars in trade me sandbox application
-  So that I can see the cars list from the search
+Feature: Jira-Feature# Kiwi Saver Retirement Calculator
+  As a user
+  I will navigate to kiwi saver calculator and calculate my savings
+  So that I can see how much the KiwiSaver projected balance would be at retirement
 
   @validateFieldInformation
   Scenario Outline: Users wants that while using the KiwiSaver Retirement Calculator all fields in the calculator have got the

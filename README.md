@@ -77,10 +77,10 @@ C:\Users\Projectfolder> mvn clean install
 
 ## Reporting
 
-For greater understanding cucumber JVM is plugged in with the framework, However the inbuild cucumber.Html report is avaialble
+For greater understanding cucumber JVM is plugged in with the framework, However the inbuilt cucumber.Html report is available.
 
 Once all the test is executed,
-<br/>Open the project folder ->\target\cucumber-reports\advanced-reports\cucumber-html-reports
+<br/>Open the project folder ->\target\cucumber-html-reports
 >### overview-features.html
 
 ![Scenario](/src/test/resources/imageForGit/Report.JPG)
