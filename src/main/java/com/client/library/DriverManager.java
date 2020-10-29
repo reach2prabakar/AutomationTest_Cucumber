@@ -1,8 +1,13 @@
 package com.client.library;
 
+import com.client.processor.WestpacTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class DriverManager {
+
+    private static final Logger logger = LogManager.getLogger(DriverManager.class);
     private WebDriver driver;
     protected static ThreadLocal<WebDriver> driverthread = new ThreadLocal<>();
 
@@ -10,6 +15,7 @@ public class DriverManager {
 
     public static WebDriver getDriver(){
         if (driverthread == null) {
+            logger.error("Driver object is not instantiated, createWebdriver() in Driverclass should be called");
             throw new RuntimeException("Driver object is not instantiated, createWebdriver() in Driverclass should be called");
         }
         return driverthread.get();

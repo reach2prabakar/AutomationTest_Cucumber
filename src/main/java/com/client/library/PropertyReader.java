@@ -14,7 +14,7 @@ public class PropertyReader {
     private final Properties prop = new Properties();
 
     public PropertyReader() {
-        String propFileName = System.getProperty("env")!=null? System.getProperty("env") : "sandbox";
+        String propFileName = System.getProperty("env")!=null? System.getProperty("env") : "test";
         InputStream resourceStream = this.getClass().getClassLoader().getResourceAsStream( propFileName+ ".properties");
         loadProperties(resourceStream);
     }
@@ -36,6 +36,5 @@ public class PropertyReader {
         } else {
             return prop.getProperty(name);
         }
-
     }
 }
