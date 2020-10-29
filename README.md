@@ -38,7 +38,7 @@ Java -version
 Mvn -version
 ```
 
-##Test data set up  
+## Test data set up  
   ![scenario](/src/test/resources/imageForGit/Feature.JPG)
   
   As mentioned in the fig you can keep adding data to the column<br/>
@@ -56,8 +56,8 @@ Mvn -version
 Download the code from GITHUB 
 
 ```sh
-git pull origin master 
-<br/>https://github.com/reach2prabakar/RecruitIt_TradeMe_AutomationFramework.git
+git pull origin master <br/>
+https://github.com/reach2prabakar/RecruitIt_TradeMe_AutomationFramework.git
 ```
 
 Open the project in any IDE (Intellij preferred)
@@ -83,7 +83,7 @@ Once all the test is executed,
 <br/>Open the project folder ->\target\cucumber-reports\advanced-reports\cucumber-html-reports
 >### overview-features.html
 
-
+![Scenario](/src/test/resources/imageForGit/Report.JPG)
 
 ## Contributing
 
