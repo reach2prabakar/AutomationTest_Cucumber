@@ -1,7 +1,7 @@
 # Automation Assessment
 
 
-> TO validate the TradeMe Webservices and UI with the given Acceptance Criteria.
+> TO validate the Westpac retirement calculator with the given Acceptance Criteria.
 
 ## TOOLS
 [JAVA V_1.7 or greater](https://www.java.com/en/download/)<br/>
@@ -10,13 +10,12 @@
 [Simple JsonParser , Rest Assured](https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple)
 
 ## Project Description
-> This project is to navigate to trade me url and get the used car details and validate with the acceptance
-<br/>Also to validate the same business process via Webservices.
+> This project is to navigate to Westpac retirement calculator and validate with the acceptance
+<br/>Also to validate the proposed savings.
 
 ## Project Highlights
 > Project is build on BDD framework with POM and  part of modular approach. .<br/>
-> Selenium/Java is used for code<br/>
-> Validation of API is done via Rest Assured <br/>
+> Java/Selenium is used for code<br/>
 > Log are entered using log4j2<br/>
 >Assertion is done thorugh hamcrest assertion <br/>
 >Report - 2 type of report 
@@ -25,7 +24,7 @@
 
 
 
-## Installation/Pre conditions for Running the test
+## Installation/Prerequisites for the test
 
 Java 1.7 or higher
 <br/>Maven 
@@ -39,29 +38,17 @@ Java -version
 Mvn -version
 ```
 
-## Creating testdata
-To create API test data, use jsonTestData.json file in test/resource
-<br/>"getUsedCars": { 
-  <br/>    "endpoint":"/v1/Categories/UsedCars.json",
-   <br/> "method" : "get",
-  <br/>      "auth" : "noAuth",
-   <br/> "header": "",
-  <br/>  "requestBody": ""
-  <br/>}
-  <br/>"getUsedCars":  - is your test api name to pass in feature file
-
+##Test data set up  
+  ![scenario](/src/test/resources/imageForGit/Feature.JPG)
   
-  ![scenario](/src/test/resources/imageForReadme/FeatureApiData.jpg)
+  As mentioned in the fig you can keep adding data to the column<br/>
+  | currentAge | employment    | salary | kiwiBalance | kiwiSaver | volContribution | frequent    | riskProfile  | savingGoal | projection |
   
   ## Validations
   
-  > All API uri response code is validated for status code 200
-  
-  > The response data is then asserted with the acceptance criteria 
-  
   > The UI data is asserted with the business requirement, if any step fail the test scenario will fail.
   
-  > One scenario will get failed as the test data does not match with the details in UI
+  > Result will be updated with number of test scenario and test step passed
   
 
 ## How to run the test
@@ -74,11 +61,11 @@ git pull origin master
 ```
 
 Open the project in any IDE (Intellij preferred)
-You can right click on the feature file and select Run (not preffered to run in suite level)
+You can right click on the feature file and select Run (not preferred to run in suite level)
 
 Mention the tag for the scenario to run in the feature file and configure Run with the specific tag to run the test
 
-![configure](/src/test/resources/imageForReadme/config.JPG)
+![configure](/src/test/resources/imageForGit/Configure.JPG)
 
 If you want to run the project as maven Build 
 
@@ -96,10 +83,6 @@ Once all the test is executed,
 <br/>Open the project folder ->\target\cucumber-reports\advanced-reports\cucumber-html-reports
 >### overview-features.html
 
-![Scenario](/src/test/resources/imageForReadme/scenarioReport.jpg)
-<br/>
-<br/>
-![FailedScenario](/src/test/resources/imageForReadme/failedscenario.jpg)
 
 
 ## Contributing

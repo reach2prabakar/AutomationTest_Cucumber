@@ -21,20 +21,20 @@ Feature: Jira-Feature# Used Cars Details Search
       | headerMenu | uberMenu  | subMenuItem           |
       | Personal   | KiwiSaver | KiwiSaver calculators |
 
-#
-#  @kiwiRetirementProjection
-#  Scenario Outline: Users want that the KiwiSaver Retirement Calculator users are able to calculate what their KiwiSaver projected
-#  balance would be at retirement
-#
-#    Given user opens Westpac desktop application
-#    When user navigated to the <headerMenu> and <uberMenu> and then to <subMenuItem> menu option
-#    Then user is able to calculate his kiwi saver projected balance at retirement
-#      | currentAge | employment    | salary | kiwiBalance | kiwiSaver | volContribution | frequent    | riskProfile  | savingGoal | projection |
-#      | 30         | Employed      | 82000  |             | 4         |                 |             | Defensive    |            | $436,365   |
-#      | 45         | Self-employed |        | 100000      |           | 90              | Fortnightly | Conservative | 290000     | $259,581   |
-#      | 55         | Not employed  |        | 140000      |           | 10              | Annually    | Balanced     | 200000     | $197,679   |
-#
-#    #projection data is hardcoded as the calculation logic is not known.
-#    Examples:
-#      | headerMenu | uberMenu  | subMenuItem           |
-#      | Personal   | KiwiSaver | KiwiSaver calculators |
+
+  @kiwiRetirementProjection
+  Scenario Outline: Users want that the KiwiSaver Retirement Calculator users are able to calculate what their KiwiSaver projected
+  balance would be at retirement
+
+    Given user opens Westpac desktop application
+    When user navigated to the <headerMenu> and <uberMenu> and then to <subMenuItem> menu option
+    Then user is able to calculate his kiwi saver projected balance at retirement
+      | currentAge | employment    | salary | kiwiBalance | kiwiSaver | volContribution | frequent    | riskProfile  | savingGoal | projection |
+      | 30         | Employed      | 82000  |             | 4         |                 |             | Defensive    |            | $436,365   |
+      | 45         | Self-employed |        | 100000      |           | 90              | Fortnightly | Conservative | 290000     | $259,581   |
+      | 55         | Not employed  |        | 140000      |           | 10              | Annually    | Balanced     | 200000     | $197,679   |
+
+    #projection data is hardcoded as the calculation logic is not known.
+    Examples:
+      | headerMenu | uberMenu  | subMenuItem           |
+      | Personal   | KiwiSaver | KiwiSaver calculators |
