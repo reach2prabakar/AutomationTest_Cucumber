@@ -1,4 +1,4 @@
-# RecruitIt_TradeMe_AutomationFramework
+# Automation Assessment
 
 
 > TO validate the TradeMe Webservices and UI with the given Acceptance Criteria.
